@@ -1,27 +1,30 @@
-import rigoImageUrl from "../assets/img/rigo-baby.jpg";
-import useGlobalReducer from "../hooks/useGlobalReducer.jsx";
+import React from "react";
 import { Link } from "react-router-dom";
+import useGlobalReducer from "../hooks/useGlobalReducer";
 
 export const Home = () => {
-    const { store, dispatch } = useGlobalReducer();
+  const { store, dispatch } = useGlobalReducer();
 
-    return (
-        <div className="text-center mt-5">
-            <h1>Hello Rigo!!</h1>
-            <h3>{store.saludo}</h3>
-            <h3>{store.saludo}</h3>
+  return (
+    <div className="listaDeContactos text-center mt-5">
+      <h1>Mi lista de Contactos</h1>
 
-            <Link to="/informacion">
-                <button className="btn btn-danger">Ir a Info</button>
-            </Link>
+      <div className="principal container position-relative d-inline-block">
+        <div className="container-fluid">
+          <img
+            src="https://www.papelaria.cl/cdn/shop/products/p-ocs-cb043-3-d2240b91-2b73-4d07-a19f-0aaa77456fd1_1200x.webp?v=175699402"
+            className="img-fluid rounded-start"
+            alt="Agenda"
+          />
 
-            <Link to="/agenda-lucas" className="ms-2">
-                <button className="btn btn-danger">Ir a agenda Lucas</button>
-            </Link>
-
-            <p className="mt-3">
-                <img src={rigoImageUrl} alt="Rigo baby" />
-            </p>
+          <Link to="/agenda">
+            <button className="btn btn-secondary btn-lg btn-overlay mt-3">
+              Ver Contactos
+            </button>
+          </Link>
         </div>
-    );
+      </div>
+    </div>
+  );
 };
+ export default Home;
